@@ -195,7 +195,7 @@ app.post("/EditBlogs/EditBlog/Edit",(req,res) =>{
    
 })
 
-app.listen(port, ()=>{
+app.listen(PORT, ()=>{
     console.log("server is running....");
 })
 
