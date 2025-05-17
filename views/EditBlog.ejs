@@ -1,0 +1,42 @@
+<%- include("partials/header.ejs") %>
+
+
+  
+
+    <h2 class="new-blog-heading">Edit the blog</h2>
+     
+
+    <form class="form-container" action="/EditBlogs/EditBlog/Edit" method="post">
+        <input type="number" style="display: none;" name="id" value="<%= post.id %>">
+        <div class="blog-conatiner">
+
+                 <div class="title-container">
+                                
+                          <label for="title">Title</label>
+                          <input required type="text" name="title" value="<%= post.title %>">
+
+                 </div>
+
+                 <div class="body-container">
+                                
+                          <label for="body">Text</label>
+                          <textarea required style="resize: none;" name="body"><%=post.body%></textarea>
+                           
+                 </div>
+
+                 <div class="submit-container">
+                      
+                     <button type="submit">Edit</button>
+
+                 </div>
+
+        </div>
+         
+
+    </form>
+
+
+
+
+<%- include("partials/footer.ejs") %>
+

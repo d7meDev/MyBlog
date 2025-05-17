@@ -1,0 +1,42 @@
+<%- include("partials/header.ejs") %>
+
+
+    <h2 class="new-blog-heading">Create a new blog</h2>
+     
+
+    <form class="form-container" action="/NewBlog/create" method="post">
+           
+        <div class="blog-conatiner">
+
+                 <div class="title-container">
+                                
+                          <label for="title">Title</label>
+                          <input required type="text" name="title">
+
+                 </div>
+
+                 <div class="body-container">
+                                
+                          <label for="body">Text</label>
+                          <textarea required style="resize: none;" name="body" ></textarea>
+
+                 </div>
+
+                 <div class="submit-container">
+                      
+                     <button type="submit">Publish</button>
+
+                 </div>
+
+        </div>
+         
+
+    </form>
+
+
+
+
+
+
+<%- include("partials/footer.ejs") %>
+

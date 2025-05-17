@@ -1,0 +1,39 @@
+<%- include("partials/header.ejs") %>
+
+
+<% if(posts.length === 0) { %>
+    
+    <h2 class="sorry">Sorry, there are no blogs yet. :(</h2>
+    
+<% } else { %>
+           
+             <div class="blogs">
+                 
+                  <% for(let i = 0; i<posts.length; i++) { %>
+                    <div class="blog">
+
+                   <div class="blog-head">
+                            
+                      <h3 class="blog-head-title"><%= posts[i].title %></h3> 
+
+                      <p class="blog-head-date"> <%= posts[i].date.toISOString().split("T")[0] %> </p>
+                     
+                   </div>
+
+                   <p class="blog-body">
+                        <%= posts[i].body %>
+                   </p>
+
+             </div>
+             <% } %>
+             </div>
+          
+    <% } %>
+
+
+
+
+
+
+
+<%- include("partials/footer.ejs") %>

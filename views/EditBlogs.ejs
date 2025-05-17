@@ -1,0 +1,47 @@
+<%- include("partials/header.ejs") %>
+
+  <% if(posts.length === 0) { %>
+    
+    <h2 class="sorry">Sorry, there are no blogs yet. :(</h2>
+    
+<% } else { %>
+    <div class="blogs-edit">
+
+         
+        <% for(let i = 0; i< posts.length;i++){ %>
+
+        <div class="blog-edit">
+
+            <h3  class="blog-edit-title">
+                <%= posts[i].title %>
+            </h3>
+            <p  class="blog-edit-body">
+                <%= posts[i].body.slice(0,20) %>...
+            </p>
+            <p class="blog-edit-date">
+                <%= posts[i].date.toISOString().split("T")[0] %>
+            </p>
+
+            <div class="blog-edit-forms">
+
+                <form action="/EditBlogs/Delete" method="post">
+                    <input type="number" name="id" value="<%= posts[i].id %>" style="display: none;">
+                    <button style="background-color: red;" type="submit"><img src="images/close.svg" alt="close svg"> </button>
+                </form>
+                <form action="/EditBlogs/EditBlog" method="post">
+                    <input type="number" name="id" value="<%= posts[i].id %>" style="display: none;">
+                    <button style="background-color: orange;" type="submit"> <img src="images/edit.svg" alt="edit svg"> </button>
+                </form>
+
+            </div>
+
+
+        </div>
+        <% } %>
+
+    </div>
+
+    <% } %>
+
+
+    <%- include("partials/footer.ejs") %>
